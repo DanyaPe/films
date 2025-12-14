@@ -1,10 +1,14 @@
 import "tailwindcss";
 import Movie from "./Movie";
 
-export default function Movies() {
+export default function Movies(props) {
+    const { movieList } = props;
+
     return (
         <div>
-            <Movie />
+            {movieList.map((movieElement) => {
+                <Movie />;
+            })}
         </div>
     );
 }
