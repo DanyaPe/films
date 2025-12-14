@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: "Palui";
+    src: url("./assets/fonts/PaluiSPDemo-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Spotify";
+    src: url("./assets/fonts/SpotifyMixUICyrillic-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@theme {
+    --font-palui: "Palui", sans-serif;
+    --font-spotify: "Spotify", sans-serif;
+}
