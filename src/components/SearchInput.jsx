@@ -1,4 +1,4 @@
-import "tailwindcss";
+import "../index.css";
 
 export default function SearchInput() {
     return (

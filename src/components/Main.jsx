@@ -1,4 +1,4 @@
-import "tailwindcss";
+import "../index.css";
 import SearchInput from "./SearchInput";
 import Movies from "./Movies";
 import Preloader from "./Preloader";

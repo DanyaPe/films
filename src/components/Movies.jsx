@@ -1,4 +1,4 @@
-import "tailwindcss";
+import "../index.css";
 import Movie from "./Movie";
 
 export default function Movies(props) {

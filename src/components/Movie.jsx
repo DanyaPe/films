@@ -1,4 +1,4 @@
-import "tailwindcss";
+import "../index.css";
 
 export default function Movie(props) {
     const { Title, Year, Poster } = props;
