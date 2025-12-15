@@ -9,13 +9,9 @@ export default class App extends React.Component {
         movieList: [],
     };
 
-    componentDidMount() {
-        //Добавить запрос для вытягивания первоначальных данных
-    }
-
     render() {
         return (
-            <div className="min-w-screen min-h-screen flex flex-col">
+            <div className="min-w-full min-h-screen flex flex-col">
                 <Header />
 
                 <Main movieList={this.state.movieList} />
