@@ -2,7 +2,7 @@ import "tailwindcss";
 
 export default function SearchInput() {
     return (
-        <div className="m-5 min-w-200 max-w-300 flex items-center border-b-2 border-gray-700">
+        <div className="relative m-5 min-w-200 max-w-300 flex items-center border-b-2 border-gray-700">
             <svg
                 className="m-2 h-7 w-7 text-gray-700"
                 xmlns="http://www.w3.org/2000/svg"
@@ -18,9 +18,16 @@ export default function SearchInput() {
                 />
             </svg>
             <input
-                placeholder="Введите название фильма"
-                className="focus:outline-none focus:shadow-sm text-2xl text-amber-50 font-spotify grow"
+                name="search"
+                placeholder=" "
+                className="peer focus:outline-none focus:shadow-sm text-2xl text-amber-50 font-spotify grow"
             />
+            <label
+                for="search"
+                class="pointer-events-none absolute left-10 top-1/2 -translate-y-1/2 text-gray-400 transition-all duration-300 peer-focus:top-0 peer-focus:text-xs peer-not-placeholder-shown:top-2 peer-not-placeholder-shown:text-xs"
+            >
+                Введите название фильма
+            </label>
         </div>
     );
 }
