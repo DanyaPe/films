@@ -3,11 +3,17 @@ import React from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Main from "./components/Main";
+import fetchMovieList from "./utils/fetchMovieList";
 
 export default class App extends React.Component {
     state = {
         movieList: [],
     };
+
+    async componentDidMount() {
+        const result = await fetchMovieList("star wars");
+        this.setState({ movieList: result });
+    }
 
     render() {
         return (
