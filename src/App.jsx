@@ -11,8 +11,9 @@ export default class App extends React.Component {
     };
 
     async componentDidMount() {
-        const result = await fetchMovieList("star wars");
-        this.setState({ movieList: result });
+        const result = await fetchMovieList("Star Wars");
+        if (result && result.Response === "True")
+            this.setState({ movieList: result.Search });
     }
 
     render() {
