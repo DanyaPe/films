@@ -1,12 +1,14 @@
 import "../index.css";
 import React from "react";
 
-export class SearchInput extends React.Component(props) {
+export default class SearchInput extends React.Component {
     state = {
         text: "",
     };
 
     render() {
+        const { handleSearch } = this.props;
+
         return (
             <div className="relative m-5 min-w-200 max-w-300 flex items-center border-b-2 border-gray-700">
                 <svg
@@ -30,6 +32,10 @@ export class SearchInput extends React.Component(props) {
                     onChange={(event) =>
                         this.setState({ text: event.target.value })
                     }
+                    onKeyDown={(event) => {
+                        if (event.key === "Enter")
+                            handleSearch(this.state.text);
+                    }}
                 />
                 <label
                     for="search"
