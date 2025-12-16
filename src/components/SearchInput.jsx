@@ -41,7 +41,7 @@ export default class SearchInput extends React.Component {
                     for="search"
                     class="pointer-events-none absolute left-10 top-1/2 -translate-y-1/2 text-gray-400 transition-all duration-300 peer-focus:top-0 peer-focus:text-xs peer-not-placeholder-shown:top-2 peer-not-placeholder-shown:text-xs"
                 >
-                    Введите название фильма
+                    Введите название фильма и нажмите Enter
                 </label>
             </div>
         );
