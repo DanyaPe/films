@@ -12,7 +12,7 @@ export default async function fetchMovieList(title, type) {
             }`
         ).then((data) => data.json());
     } catch (error) {
-        console.log(`Ошибка выполнения запроса к OMDb - ${error}`);
+        console.error(`Ошибка выполнения запроса к OMDb:\n ${error}`);
         return null;
     }
 
