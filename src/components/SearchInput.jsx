@@ -7,7 +7,7 @@ export default class SearchInput extends React.Component {
     };
 
     render() {
-        const { handleSearch } = this.props;
+        const { handleSearch, filter } = this.props;
 
         return (
             <div className="relative m-5 min-w-200 max-w-300 flex items-center border-b-2 border-gray-700">
@@ -34,7 +34,7 @@ export default class SearchInput extends React.Component {
                     }
                     onKeyDown={(event) => {
                         if (event.key === "Enter")
-                            handleSearch(this.state.text);
+                            handleSearch(this.state.text, filter);
                     }}
                 />
                 <label

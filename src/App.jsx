@@ -9,22 +9,33 @@ export default class App extends React.Component {
     state = {
         movieList: [],
         loading: true,
+        filter: "all",
     };
 
-    handleSearch = async (text) => {
-        const result = await fetchMovieList(text);
+    handleSearch = async (text, type) => {
+        const result = await fetchMovieList(text, type);
         if (result && result.Response === "True")
             this.setState({ movieList: result.Search, loading: false });
     };
 
+    handleFilter = (filter) => {
+        if (["all", "movie", "series", "episode"].includes(filter)) {
+            this.setState({ filter: filter });
+        }
+    };
+
     render() {
+        const { movieList, loading, filter } = this.state;
+
         return (
             <div className="min-w-full min-h-screen flex flex-col">
                 <Header />
                 <Main
                     handleSearch={this.handleSearch}
-                    movieList={this.state.movieList}
-                    loading={this.state.loading}
+                    handleFilter={this.handleFilter}
+                    movieList={movieList}
+                    loading={loading}
+                    filter={filter}
                 />
                 <Footer />
             </div>
