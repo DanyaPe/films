@@ -2,7 +2,7 @@ import "../index.css";
 
 export default function Preloader() {
     return (
-        <div className="inline-flex items-center rounded-md px-4 py-2 text-sm font-spotify text-amber-50 transition duration-150 ease-in-out">
+        <div className="inline-flex items-center rounded-md px-4 py-2 text-sm font-spotify text-amber-50 transition duration-150 ease-in-out m-10">
             <svg
                 class="mr-3 -ml-1 size-5 animate-spin text-white"
                 xmlns="http://www.w3.org/2000/svg"
