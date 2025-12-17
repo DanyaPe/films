@@ -7,13 +7,17 @@ import { fetchResultList } from "./utils/fetchMovieList";
 
 export default class App extends React.Component {
     state = {
+        isFirstRender: true,
         movieList: [],
-        loading: true,
+        loading: false,
         filter: "all",
     };
 
     handleSearch = async (text) => {
+        this.setState({ loading: true, isFirstRender: false });
+
         const result = await fetchResultList(text);
+
         this.setState({
             movieList: Array.from(
                 new Map(result.map((movie) => [movie.imdbID, movie])).values()
@@ -29,7 +33,7 @@ export default class App extends React.Component {
     };
 
     render() {
-        const { movieList, loading, filter } = this.state;
+        const { movieList, loading, filter, isFirstRender } = this.state;
 
         return (
             <div className="min-w-full min-h-screen flex flex-col">
@@ -37,6 +41,7 @@ export default class App extends React.Component {
                 <Main
                     handleSearch={this.handleSearch}
                     handleFilter={this.handleFilter}
+                    isFirstRender={isFirstRender}
                     movieList={movieList}
                     loading={loading}
                     filter={filter}
