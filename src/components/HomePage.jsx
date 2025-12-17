@@ -4,7 +4,7 @@ export default function HomePage() {
     return (
         <div>
             <img
-                src="src/assets/pictures/home_page_pic.jpg"
+                src="/home_page_pic.jpg"
                 alt="Home Page Pic"
                 className="m-20"
             />
