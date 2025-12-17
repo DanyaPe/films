@@ -3,7 +3,7 @@ import React from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Main from "./components/Main";
-import fetchMovieList from "./utils/fetchMovieList";
+import { fetchResultList } from "./utils/fetchMovieList";
 
 export default class App extends React.Component {
     state = {
@@ -12,17 +12,14 @@ export default class App extends React.Component {
         filter: "all",
     };
 
-    handleSearch = async (text, type) => {
-        const result = await fetchMovieList(text, type);
-        if (result && result.Response === "True")
-            this.setState({
-                movieList: Array.from(
-                    new Map(
-                        result.Search.map((movie) => [movie.imdbID, movie])
-                    ).values()
-                ),
-                loading: false,
-            });
+    handleSearch = async (text) => {
+        const result = await fetchResultList(text);
+        this.setState({
+            movieList: Array.from(
+                new Map(result.map((movie) => [movie.imdbID, movie])).values()
+            ),
+            loading: false,
+        });
     };
 
     handleFilter = (filter) => {

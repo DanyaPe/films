@@ -9,7 +9,7 @@ export default function Main(props) {
 
     return (
         <main className="bg-gray-800 flex flex-col grow items-center py-10">
-            <SearchInput handleSearch={handleSearch} filter={filter} />
+            <SearchInput handleSearch={handleSearch} />
             <Filter handleFilter={handleFilter} filter={filter} />
             {loading ? (
                 <Preloader />
