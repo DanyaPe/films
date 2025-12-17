@@ -15,7 +15,14 @@ export default class App extends React.Component {
     handleSearch = async (text, type) => {
         const result = await fetchMovieList(text, type);
         if (result && result.Response === "True")
-            this.setState({ movieList: result.Search, loading: false });
+            this.setState({
+                movieList: Array.from(
+                    new Map(
+                        result.Search.map((movie) => [movie.imdbID, movie])
+                    ).values()
+                ),
+                loading: false,
+            });
     };
 
     handleFilter = (filter) => {
