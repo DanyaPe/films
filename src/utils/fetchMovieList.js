@@ -16,19 +16,20 @@ const fetchMovieList = async (title, type, page) => {
     try {
         const response = await fetch(
             `http://www.omdbapi.com/?apikey=d45a732e&s=${title}&type=${type}&page=${page}&r=json`
-        ).then((data) => data.json());
+        );
 
-        if (response && response.Response === "True") {
-            response.Search.forEach((element) => {
-                result.push(element);
-            });
+        if (response.ok) {
+            console.error(`Ошибка HTTP запроса:\n${response.status}`);
         } else {
-            console.warn(
-                `Не удалось обработать ответ от OMDb:\n ${response.Error}`
-            );
+            const json = response.json();
+            json.Response === "True"
+                ? result.push(...json.Search)
+                : console.warn(
+                      `Не удалось обработать ответ от сервиса OMDb:\n${json.Error}`
+                  );
         }
     } catch (error) {
-        console.error(`Ошибка выполнения запроса к OMDb:\n ${error}`);
+        console.error(`Ошибка выполнения запроса к OMDb:\n${error}`);
     }
 
     return result;
