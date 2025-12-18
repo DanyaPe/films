@@ -44,9 +44,6 @@ const fetchResultList = async (title) => {
     fetchList = await fetchMovieList(title, "series", "1");
     resultList = resultList.concat(fetchList);
 
-    fetchList = await fetchMovieList(title, "episode", "1");
-    resultList = resultList.concat(fetchList);
-
     return resultList;
 };
 

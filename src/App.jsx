@@ -27,7 +27,7 @@ export default class App extends React.Component {
     };
 
     handleFilter = (filter) => {
-        if (["all", "movie", "series", "episode"].includes(filter)) {
+        if (["all", "movie", "series"].includes(filter)) {
             this.setState({ filter: filter });
         }
     };

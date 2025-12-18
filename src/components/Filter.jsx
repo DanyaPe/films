@@ -35,16 +35,6 @@ export default function Filter(props) {
                 />
                 Сериалы
             </label>
-            <label>
-                <input
-                    type="radio"
-                    name="episode"
-                    id="episode"
-                    onChange={() => handleFilter("episode")}
-                    checked={filter === "episode"}
-                />
-                Эпизоды
-            </label>
         </div>
     );
 }
