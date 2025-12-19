@@ -13,6 +13,8 @@ export default function Main(props) {
         loading,
         filter,
         isFirstRender,
+        title,
+        isEnd,
     } = props;
 
     return (
@@ -25,7 +27,13 @@ export default function Main(props) {
             ) : (
                 <>
                     <Filter handleFilter={handleFilter} filter={filter} />
-                    <Movies movieList={movieList} filter={filter} />
+                    <Movies
+                        movieList={movieList}
+                        filter={filter}
+                        isEnd={isEnd}
+                        title={title}
+                        handleSearch={handleSearch}
+                    />
                 </>
             )}
         </main>
