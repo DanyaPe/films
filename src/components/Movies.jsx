@@ -29,7 +29,7 @@ export default function Movies(props) {
                             </p>
                         ) : (
                             <button
-                                className="font-spotify text-amber-50 hover:bg-amber-50 hover:text-gray-800 p-5 rounded-full"
+                                className="border-2 font-spotify text-amber-50 hover:bg-white hover:text-gray-800 p-3 rounded-2xl duration-300 ease-in-out"
                                 onClick={() => handleSearch(title)}
                             >
                                 Загрузить еще
