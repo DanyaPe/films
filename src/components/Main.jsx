@@ -12,6 +12,7 @@ export default function Main(props) {
         movieList,
         loading,
         filter,
+        filtersValue,
         isFirstRender,
         title,
         isEnd,
@@ -26,7 +27,11 @@ export default function Main(props) {
                 <Preloader />
             ) : (
                 <>
-                    <Filter handleFilter={handleFilter} filter={filter} />
+                    <Filter
+                        handleFilter={handleFilter}
+                        filter={filter}
+                        filtersValue={filtersValue}
+                    />
                     <Movies
                         movieList={movieList}
                         filter={filter}

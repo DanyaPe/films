@@ -6,6 +6,12 @@ import Main from "./components/Main";
 import { fetchResultList } from "./utils/fetchMovieList";
 
 export default class App extends React.Component {
+    FILTERS = [
+        { id: "all", value: "Все" },
+        { id: "movie", value: "Фильмы" },
+        { id: "series", value: "Сериалы" },
+    ];
+
     state = {
         isFirstRender: true,
         movieList: [],
@@ -45,7 +51,7 @@ export default class App extends React.Component {
     };
 
     handleFilter = (filter) => {
-        if (["all", "movie", "series"].includes(filter)) {
+        if (this.FILTERS.some((element) => element.id === filter)) {
             this.setState({ filter: filter });
         }
     };
@@ -57,6 +63,7 @@ export default class App extends React.Component {
                 <Main
                     handleSearch={this.handleSearch}
                     handleFilter={this.handleFilter}
+                    filtersValue={this.FILTERS}
                     {...this.state}
                 />
                 <Footer />
