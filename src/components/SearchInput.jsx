@@ -1,5 +1,6 @@
 import "../index.css";
 import React from "react";
+import text from "../internationalization/translations.js";
 
 export default class SearchInput extends React.Component {
     state = {
@@ -7,7 +8,7 @@ export default class SearchInput extends React.Component {
     };
 
     render() {
-        const { handleSearch } = this.props;
+        const { handleSearch, language } = this.props;
 
         return (
             <div className="relative m-5 min-w-200 max-w-300 flex items-center border-b-2 border-gray-700">
@@ -28,7 +29,7 @@ export default class SearchInput extends React.Component {
                     for="search"
                     class="pointer-events-none absolute left-15 top-1/2 -translate-y-1/2 text-gray-400 transition-all duration-300 peer-focus:top-0 peer-focus:text-xs peer-not-placeholder-shown:top-2 peer-not-placeholder-shown:text-xs"
                 >
-                    Введите название фильма и нажмите Enter
+                    {text(language, "tip_for_search")}
                 </label>
             </div>
         );

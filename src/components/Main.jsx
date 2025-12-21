@@ -8,18 +8,19 @@ export default function Main(props) {
     const {
         handleSearch,
         handleFilter,
-        movieList,
-        loading,
-        filter,
-        filtersValue,
+        language,
         isFirstRender,
         title,
+        movieList,
+        filter,
+        filtersValue,
+        loading,
         isEnd,
     } = props;
 
     return (
         <main className="bg-gray-800 flex flex-col grow items-center py-10">
-            <SearchInput handleSearch={handleSearch} />
+            <SearchInput handleSearch={handleSearch} language={language} />
             {isFirstRender ? (
                 <HomePage />
             ) : (
@@ -28,6 +29,7 @@ export default function Main(props) {
                         handleFilter={handleFilter}
                         filter={filter}
                         filtersValue={filtersValue}
+                        language={language}
                     />
                     <Movies
                         movieList={movieList}
@@ -36,6 +38,7 @@ export default function Main(props) {
                         title={title}
                         handleSearch={handleSearch}
                         loading={loading}
+                        language={language}
                     />
                 </>
             )}

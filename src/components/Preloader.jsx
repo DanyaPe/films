@@ -1,6 +1,9 @@
 import "../index.css";
+import text from "../internationalization/translations.js";
 
-export default function Preloader() {
+export default function Preloader(props) {
+    const { language } = props;
+
     return (
         <div className="inline-flex items-center rounded-md px-4 py-2 text-sm font-spotify text-amber-50 transition duration-150 ease-in-out m-10">
             <svg
@@ -23,7 +26,7 @@ export default function Preloader() {
                     d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                 ></path>
             </svg>
-            Loading…
+            {text(language, "loading")}
         </div>
     );
 }

@@ -1,9 +1,11 @@
 import "../index.css";
 import Movie from "./Movie";
 import Preloader from "./Preloader";
+import text from "../internationalization/translations.js";
 
 export default function Movies(props) {
-    const { movieList, filter, isEnd, title, handleSearch, loading } = props;
+    const { movieList, filter, isEnd, title, handleSearch, loading, language } =
+        props;
 
     return (
         <div className="flex flex-col px-20 justify-center">
@@ -26,25 +28,25 @@ export default function Movies(props) {
                     <div className="flex justify-center">
                         {isEnd ? (
                             <p className="text-amber-50 font-spotify text-xl">
-                                Загружены все найденные результаты
+                                {text(language, "all_results")}
                             </p>
                         ) : loading ? (
-                            <Preloader />
+                            <Preloader language={language} />
                         ) : (
                             <button
                                 className="border-2 font-spotify text-amber-50 hover:bg-white hover:text-gray-800 p-3 rounded-2xl duration-300 ease-in-out"
                                 onClick={() => handleSearch(title)}
                             >
-                                Загрузить еще
+                                {text(language, "more_results")}
                             </button>
                         )}
                     </div>
                 </>
             ) : loading ? (
-                <Preloader />
+                <Preloader language={language} />
             ) : (
                 <p className="text-amber-50 font-spotify text-4xl">
-                    Нет результатов
+                    {text(language, "no_results")}
                 </p>
             )}
         </div>

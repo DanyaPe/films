@@ -2,17 +2,17 @@ import "../index.css";
 import FilterButton from "./FilterButton";
 
 export default function Filter(props) {
-    const { handleFilter, filter, filtersValue } = props;
+    const { handleFilter, filter, filtersValue, language } = props;
 
     return (
         <div className="flex flex-row justify-between font-spotify text-amber-50 min-w-200 text-xl">
-            {filtersValue.map((element) => (
+            {filtersValue.map((filterValue) => (
                 <FilterButton
-                    key={element.id}
-                    id={element.id}
-                    value={element.value}
+                    key={filterValue}
+                    filterValue={filterValue}
                     handleFilter={handleFilter}
                     filter={filter}
+                    language={language}
                 />
             ))}
         </div>

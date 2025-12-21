@@ -6,18 +6,15 @@ import Main from "./components/Main";
 import { fetchResultList } from "./utils/fetchMovieList";
 
 export default class App extends React.Component {
-    FILTERS = [
-        { id: "all", value: "Все" },
-        { id: "movie", value: "Фильмы" },
-        { id: "series", value: "Сериалы" },
-    ];
+    FILTERS = ["all", "movie", "series"];
 
     state = {
         isFirstRender: true,
-        movieList: [],
-        loading: false,
-        filter: "all",
+        language: "ru",
         title: "",
+        movieList: [],
+        filter: "all",
+        loading: false,
         page: 0,
         isEnd: false,
     };
@@ -51,22 +48,31 @@ export default class App extends React.Component {
     };
 
     handleFilter = (filter) => {
-        if (this.FILTERS.some((element) => element.id === filter)) {
+        if (this.FILTERS.includes(filter)) {
             this.setState({ filter: filter });
         }
+    };
+
+    handleLanguage = () => {
+        this.setState({
+            language: this.state.language === "ru" ? "eng" : "ru",
+        });
     };
 
     render() {
         return (
             <div className="min-w-full min-h-screen flex flex-col">
-                <Header />
+                <Header
+                    handleLanguage={this.handleLanguage}
+                    language={this.state.language}
+                />
                 <Main
                     handleSearch={this.handleSearch}
                     handleFilter={this.handleFilter}
                     filtersValue={this.FILTERS}
                     {...this.state}
                 />
-                <Footer />
+                <Footer language={this.state.language} />
             </div>
         );
     }
