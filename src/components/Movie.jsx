@@ -1,7 +1,8 @@
 import "../index.css";
+import React from "react";
 import Poster from "./Poster";
 
-export default function Movie(props) {
+export default React.memo(function Movie(props) {
     const { Title, Year, Poster: url } = props;
 
     return (
@@ -13,4 +14,4 @@ export default function Movie(props) {
             <p className="text-gray-300 font-spotify border-t-2">{Year}</p>
         </div>
     );
-}
+});

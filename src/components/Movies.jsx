@@ -1,8 +1,9 @@
 import "../index.css";
 import Movie from "./Movie";
+import Preloader from "./Preloader";
 
 export default function Movies(props) {
-    const { movieList, filter, isEnd, title, handleSearch } = props;
+    const { movieList, filter, isEnd, title, handleSearch, loading } = props;
 
     return (
         <div className="flex flex-col px-20 justify-center">
@@ -27,6 +28,8 @@ export default function Movies(props) {
                             <p className="text-amber-50 font-spotify text-xl">
                                 Загружены все найденные результаты
                             </p>
+                        ) : loading ? (
+                            <Preloader />
                         ) : (
                             <button
                                 className="border-2 font-spotify text-amber-50 hover:bg-white hover:text-gray-800 p-3 rounded-2xl duration-300 ease-in-out"
@@ -37,6 +40,8 @@ export default function Movies(props) {
                         )}
                     </div>
                 </>
+            ) : loading ? (
+                <Preloader />
             ) : (
                 <p className="text-amber-50 font-spotify text-4xl">
                     Нет результатов

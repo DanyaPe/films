@@ -2,7 +2,6 @@ import "../index.css";
 import SearchInput from "./SearchInput";
 import Movies from "./Movies";
 import Filter from "./Filter";
-import Preloader from "./Preloader";
 import HomePage from "./HomePage";
 
 export default function Main(props) {
@@ -23,8 +22,6 @@ export default function Main(props) {
             <SearchInput handleSearch={handleSearch} />
             {isFirstRender ? (
                 <HomePage />
-            ) : loading ? (
-                <Preloader />
             ) : (
                 <>
                     <Filter
@@ -38,6 +35,7 @@ export default function Main(props) {
                         isEnd={isEnd}
                         title={title}
                         handleSearch={handleSearch}
+                        loading={loading}
                     />
                 </>
             )}
