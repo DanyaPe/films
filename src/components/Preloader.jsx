@@ -5,7 +5,7 @@ export default function Preloader(props) {
     const { language } = props;
 
     return (
-        <div className="inline-flex items-center rounded-md px-4 py-2 text-sm font-spotify text-amber-50 transition duration-150 ease-in-out m-10">
+        <div className="inline-flex items-center rounded-md px-4 py-2 text-sm font-spotify dark:text-amber-50 text-black transition duration-150 ease-in-out m-10">
             <svg
                 class="mr-3 -ml-1 size-5 animate-spin text-white"
                 xmlns="http://www.w3.org/2000/svg"
@@ -17,7 +17,11 @@ export default function Preloader(props) {
                     cx="12"
                     cy="12"
                     r="10"
-                    stroke="currentColor"
+                    stroke={
+                        document.documentElement.classList.contains("dark")
+                            ? "currentColor"
+                            : "black"
+                    }
                     stroke-width="4"
                 ></circle>
                 <path

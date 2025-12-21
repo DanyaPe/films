@@ -16,7 +16,7 @@ export default class SearchInput extends React.Component {
                 <input
                     name="search"
                     placeholder=" "
-                    className="peer focus:outline-none text-2xl text-amber-50 font-spotify grow"
+                    className="peer focus:outline-none text-2xl dark:text-amber-50 text-black font-spotify grow"
                     onChange={(event) =>
                         this.setState({ text: event.target.value })
                     }

@@ -9,6 +9,7 @@ export default class App extends React.Component {
     FILTERS = ["all", "movie", "series"];
 
     state = {
+        darkMode: document.documentElement.classList.contains("dark"),
         isFirstRender: true,
         language: "ru",
         title: "",
@@ -59,12 +60,19 @@ export default class App extends React.Component {
         });
     };
 
+    handleMode = () => {
+        document.documentElement.classList.toggle("dark");
+        this.setState({ darkMode: this.state.darkMode ? false : true });
+    };
+
     render() {
         return (
             <div className="min-w-full min-h-screen flex flex-col">
                 <Header
                     handleLanguage={this.handleLanguage}
+                    handleMode={this.handleMode}
                     language={this.state.language}
+                    darkMode={this.state.darkMode}
                 />
                 <Main
                     handleSearch={this.handleSearch}
