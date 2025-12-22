@@ -5,7 +5,7 @@ export default function Filter(props) {
     const { handleFilter, filter, filtersValue, language } = props;
 
     return (
-        <div className="flex flex-row justify-between min-w-200">
+        <div className="flex flex-row justify-between gap-x-5">
             {filtersValue.map((filterValue) => (
                 <FilterButton
                     key={filterValue}

@@ -9,7 +9,7 @@ export default function FilterButton(props) {
             name={filterValue}
             id={filterValue}
             aria-pressed={filter === filterValue ? "true" : "false"}
-            className="font-spotify text-xl p-2 border-2 rounded-2xl text-black hover:text-amber-50 hover:bg-gray-800 dark:hover:bg-white dark:hover:text-gray-800 min-h-10 min-w-30 ease-in-out duration-300 dark:aria-pressed:bg-white dark:aria-pressed:text-gray-800"
+            className="font-spotify border-2 rounded-2xl text-black dark:text-amber-50 hover:text-amber-50 hover:bg-gray-800 dark:hover:bg-white dark:hover:text-gray-800 dark:aria-pressed:bg-white dark:aria-pressed:text-gray-800 ease-in-out duration-300 p-2 text-xs md:text-sm lg:text-base xl:text-xl"
             onClick={() => handleFilter(filterValue)}
         >
             {text(language, filterValue)}

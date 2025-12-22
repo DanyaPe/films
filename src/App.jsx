@@ -67,7 +67,7 @@ export default class App extends React.Component {
 
     render() {
         return (
-            <div className="min-w-full min-h-screen flex flex-col">
+            <div className="min-h-screen flex flex-col">
                 <Header
                     handleLanguage={this.handleLanguage}
                     handleMode={this.handleMode}

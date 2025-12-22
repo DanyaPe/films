@@ -15,7 +15,7 @@ export default class Poster extends React.Component {
                         : this.state.poster
                 }
                 alt="Poster"
-                className="w-80 h-120 object-fill"
+                className="h-83/100 w-93/100 self-center overflow-hidden"
                 onError={() =>
                     this.setState({
                         poster: "/place_hold_pic.png",
