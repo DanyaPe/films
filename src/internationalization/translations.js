@@ -1,9 +1,10 @@
 const translations = {
     ru: {
-        header: "Каталог фильмов",
+        header: "Поиск фильмов",
         language: "Eng",
         label_for_search: "Поиск по названию фильма",
-        tip_for_search: "Введите название фильма и нажмите Enter",
+        tip_for_search:
+            "Введите название фильма или сериала (на английском языке) и нажмите Enter",
         label_for_filter: "Фильтр по типу картины",
         all: "Все",
         movie: "Фильмы",
@@ -17,10 +18,11 @@ const translations = {
         special_thanks_end: "за предоставленный сервис.",
     },
     eng: {
-        header: "Movie Catalog",
+        header: "Movie Search",
         language: "Рус",
         label_for_search: "Search by movie title",
-        tip_for_search: "Enter the title of the movie and press Enter",
+        tip_for_search:
+            "Enter the title of the movie or TV series (in English) and press Enter",
         label_for_filter: "Filter by movie type",
         all: "All",
         movie: "Films",
