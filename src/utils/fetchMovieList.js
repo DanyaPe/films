@@ -21,7 +21,7 @@ const fetchMovieList = async (title, type, page) => {
 
     const API_KEY = import.meta.env.VITE_API_KEY;
     title = title.split(" ").join("+");
-    const endPoint = `http://www.omdbapi.com/?apikey=${API_KEY}&s=${title}&type=${type}&page=${page}&r=json`;
+    const endPoint = `https://www.omdbapi.com/?apikey=${API_KEY}&s=${title}&type=${type}&page=${page}&r=json`;
 
     try {
         const response = await fetch(endPoint);

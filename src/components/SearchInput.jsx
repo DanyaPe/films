@@ -16,7 +16,7 @@ export default class SearchInput extends React.Component {
                 className="relative p-2 min-w-[20vw] max-w-[80vw] flex items-center gap-x-2 md:w-[50vw] mt-2 md:mt-5"
             >
                 <img
-                    src="/loupe.svg"
+                    src="./loupe.svg"
                     alt="Loupe"
                     className="size-5 md:size-6 xl:size-8"
                 />
