@@ -8,23 +8,25 @@ export default function Movies(props) {
         props;
 
     return (
-        <div className="flex flex-col justify-center gap-y-5">
+        <section className="flex flex-col justify-center gap-y-5">
             {movieList.length ? (
                 <>
-                    <div className="flex flex-wrap justify-center gap-5">
+                    <ul className="flex flex-wrap justify-center gap-5">
                         {movieList.map((movieElement) => {
                             if (
                                 filter === "all" ||
                                 filter === movieElement.Type
                             )
                                 return (
-                                    <Movie
-                                        key={movieElement.imdbID}
-                                        {...movieElement}
-                                    />
+                                    <li>
+                                        <Movie
+                                            key={movieElement.imdbID}
+                                            {...movieElement}
+                                        />
+                                    </li>
                                 );
                         })}
-                    </div>
+                    </ul>
                     <div className="flex justify-center">
                         {isEnd ? (
                             <p className="text-cyan-900 dark:text-amber-50 font-spotify text-sm md:text-base xl:text-lg">
@@ -49,6 +51,6 @@ export default function Movies(props) {
                     {text(language, "no_results")}
                 </p>
             )}
-        </div>
+        </section>
     );
 }

@@ -55,8 +55,10 @@ export default class App extends React.Component {
     };
 
     handleLanguage = () => {
+        const switchLang = this.state.language === "ru" ? "eng" : "ru";
+        document.documentElement.setAttribute("lang", switchLang);
         this.setState({
-            language: this.state.language === "ru" ? "eng" : "ru",
+            language: switchLang,
         });
     };
 
