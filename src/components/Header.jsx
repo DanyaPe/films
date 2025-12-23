@@ -1,12 +1,22 @@
-import "tailwindcss";
+import "../index.css";
+import LanguageButton from "./LanguageButton";
+import ThemeButton from "./ThemeButton.jsx";
+import text from "../internationalization/translations.js";
 
-export default function Header() {
+export default function Header(props) {
+    const { handleLanguage, language, handleMode, darkMode } = props;
+
     return (
-        <header className="border-b border-gray-200 bg-gray-950">
-            <div className="mx-auto px-4 py-4 flex items-center justify-between gap-x-15">
-                <h1 className="text-6xl font-palui text-zinc-50">
-                    Movie Catalog
-                </h1>
+        <header className="border-b dark:border-zinc-200 dark:bg-gray-950 bg-green-200 border-black flex items-center justify-between gap-x-5 p-2 h-14 md:h-16 lg:h-20">
+            <h1 className="font-palui dark:text-zinc-50 text-cyan-900 text-lg md:text-3xl lg:text-4xl xl:text-6xl">
+                {text(language, "header")}
+            </h1>
+            <div className="flex justify-between gap-x-5">
+                <LanguageButton
+                    language={language}
+                    handleLanguage={handleLanguage}
+                />
+                <ThemeButton darkMode={darkMode} handleMode={handleMode} />
             </div>
         </header>
     );
