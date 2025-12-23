@@ -5,7 +5,7 @@ export default function Footer(props) {
     const { language } = props;
 
     return (
-        <footer className="border-t bg-zinc-50 border-black dark:border-gray-200 dark:bg-gray-950 h-14 md:h-16 lg:h-20">
+        <footer className="border-t bg-green-200 border-black dark:border-gray-200 dark:bg-gray-950 h-14 md:h-16 lg:h-20">
             <div className="text-center text-gray-500 text-xs md:text-sm lg:text-base">
                 <p>
                     © {new Date().getFullYear()}{" "}

@@ -19,7 +19,7 @@ export default function Main(props) {
     } = props;
 
     return (
-        <main className="bg-zinc-100 dark:bg-gray-800 flex flex-col items-center py-2 gap-y-5 grow">
+        <main className="bg-lime-50 dark:bg-gray-800 flex flex-col items-center py-2 gap-y-5 grow">
             <SearchInput handleSearch={handleSearch} language={language} />
             {isFirstRender ? (
                 <HomePage />

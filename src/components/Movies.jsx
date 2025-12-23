@@ -27,14 +27,14 @@ export default function Movies(props) {
                     </div>
                     <div className="flex justify-center">
                         {isEnd ? (
-                            <p className="text-black dark:text-amber-50 font-spotify text-sm md:text-base xl:text-lg">
+                            <p className="text-cyan-900 dark:text-amber-50 font-spotify text-sm md:text-base xl:text-lg">
                                 {text(language, "all_results")}
                             </p>
                         ) : loading ? (
                             <Preloader language={language} />
                         ) : (
                             <button
-                                className="border-2 font-spotify text-black hover:text-amber-50 hover:bg-gray-800 dark:text-amber-50 dark:hover:bg-white dark:hover:text-gray-800 rounded-2xl duration-300 ease-in-out p-2 text-xs md:text-sm lg:text-base xl:text-xl"
+                                className="border-2 font-spotify text-cyan-900 hover:text-amber-50 hover:bg-gray-800 dark:text-amber-50 dark:hover:bg-white dark:hover:text-gray-800 rounded-2xl duration-300 ease-in-out p-2 text-xs md:text-sm lg:text-base xl:text-xl"
                                 onClick={() => handleSearch(title)}
                             >
                                 {text(language, "more_results")}
@@ -45,7 +45,7 @@ export default function Movies(props) {
             ) : loading ? (
                 <Preloader language={language} />
             ) : (
-                <p className="text-black dark:text-amber-50 font-spotify text-sm md:text-base xl:text-lg">
+                <p className="text-cyan-900 dark:text-amber-50 font-spotify text-sm md:text-base xl:text-lg">
                     {text(language, "no_results")}
                 </p>
             )}

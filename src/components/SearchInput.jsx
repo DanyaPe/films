@@ -32,7 +32,7 @@ export default class SearchInput extends React.Component {
                 />
                 <label
                     for="search"
-                    class="pointer-events-none absolute top-1/2 -translate-y-1/2 text-gray-400 transition-all duration-300 peer-focus:top-0 peer-not-placeholder-shown:top-0 text-[8px] left-9 md:text-xs md:left-10 lg:text-sm xl:left-12 xl:text-base"
+                    class="pointer-events-none absolute top-1/2 -translate-y-1/2 text-cyan-900 transition-all duration-300 peer-focus:top-0 peer-not-placeholder-shown:top-0 text-[8px] left-9 md:text-xs md:left-10 lg:text-sm xl:left-12 xl:text-base"
                 >
                     {text(language, "tip_for_search")}
                 </label>
