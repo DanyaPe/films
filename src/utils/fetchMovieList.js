@@ -1,3 +1,10 @@
+/**
+ * API Запрос списка кино в сервисе OMDb
+ * @param {string} title
+ * @param {string} type
+ * @param {string} page
+ * @returns {Array<Object>}
+ */
 const fetchMovieList = async (title, type, page) => {
     const result = [];
 
@@ -38,6 +45,13 @@ const fetchMovieList = async (title, type, page) => {
     return result;
 };
 
+/**
+ * Формирование результирующего списка фильмов и сериалов по фильтру
+ * @param {string} title
+ * @param {string} page
+ * @param {string} filter
+ * @returns {Array<Object>}
+ */
 const fetchResultList = async (title, page, filter) => {
     let result = [];
 

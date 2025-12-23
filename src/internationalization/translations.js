@@ -35,6 +35,12 @@ const translations = {
     },
 };
 
+/**
+ * Текст по ключу из словаря в соответствии с указанным языком
+ * @param {string} lang
+ * @param {string} key
+ * @returns {string}
+ */
 const text = (lang, key) => {
     let result = "";
 
