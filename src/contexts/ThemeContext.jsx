@@ -3,14 +3,14 @@ import { createContext, useContext, useState } from "react";
 const ThemeContext = createContext(undefined);
 
 export function ThemeProvider() {
-    const [darkMode, setMode] = useState(
+    const [darkTheme, setDarkTheme] = useState(
         document.documentElement.classList.contains("dark")
     );
     const [isFirstRender, setFirstRender] = useState(true);
 
     return (
         <ThemeContext.Provider
-            value={{ darkMode, setMode, isFirstRender, setFirstRender }}
+            value={{ darkTheme, setDarkTheme, isFirstRender, setFirstRender }}
         >
             {children}
         </ThemeContext.Provider>
