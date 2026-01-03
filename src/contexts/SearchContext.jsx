@@ -1,14 +1,60 @@
 import { createContext, useContext, useState } from "react";
+import { useFilter } from "./FilterContext";
+import { useMovieList } from "./MovieListContext";
+import { useTheme } from "./ThemeContext";
+import { fetchResultList } from "../utils/fetchMovieList.js";
 
 const SearchContext = createContext(undefined);
 
-export function SearchProvider() {
-    const [text, setText] = useState(" ");
+export function SearchProvider({ children }) {
+    const [title, setTitle] = useState(" ");
     const [isLoading, setLoading] = useState(false);
+    const [page, setPage] = useState(0);
+    const [isEnd, setEnd] = useState(false);
+    const { filter } = useFilter();
+    const { movieList, setMovieList } = useMovieList();
+    const { setFirstRender } = useTheme();
+
+    const handleSearch = async (currentText) => {
+        setLoading(true);
+        setFirstRender(false);
+
+        const isAnotherTitle = title !== currentText;
+        if (isAnotherTitle) setTitle(currentText);
+
+        const result = await fetchResultList(
+            currentText,
+            String(isAnotherTitle ? 1 : page + 1),
+            filter
+        );
+
+        setMovieList(
+            (isAnotherTitle ? [] : movieList).concat(
+                Array.from(
+                    new Map(
+                        result.map((movie) => [movie.imdbID, movie])
+                    ).values()
+                )
+            )
+        );
+        setPage(isAnotherTitle ? 1 : page + 1);
+        setEnd(result.length < (filter === "all" ? 20 : 10) ? true : false);
+        setLoading(false);
+    };
 
     return (
         <SearchContext.Provider
-            value={{ text, setText, isLoading, setLoading }}
+            value={{
+                title,
+                setTitle,
+                isLoading,
+                setLoading,
+                page,
+                setPage,
+                isEnd,
+                setEnd,
+                handleSearch,
+            }}
         >
             {children}
         </SearchContext.Provider>

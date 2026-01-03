@@ -2,13 +2,13 @@ import { createContext, useContext, useState } from "react";
 
 const MovieListContext = createContext(undefined);
 
-export function MovieListProvider() {
-    const [movieList, setMovieList] = useState();
+export function MovieListProvider({ children }) {
+    const [movieList, setMovieList] = useState([]);
 
     return (
-        <MovieListContext.Provider
-            value={{ movieList, setMovieList }}
-        ></MovieListContext.Provider>
+        <MovieListContext.Provider value={{ movieList, setMovieList }}>
+            {children}
+        </MovieListContext.Provider>
     );
 }
 

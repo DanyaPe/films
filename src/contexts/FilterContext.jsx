@@ -2,11 +2,12 @@ import { createContext, useContext, useState } from "react";
 
 const FilterContext = createContext(undefined);
 
-export function FilterProvider() {
+export function FilterProvider({ children }) {
+    const FILTERS = ["all", "movie", "series"];
     const [filter, setFilter] = useState("all");
 
     return (
-        <FilterContext.Provider value={{ filter, setFilter }}>
+        <FilterContext.Provider value={{ filter, setFilter, FILTERS }}>
             {children}
         </FilterContext.Provider>
     );
