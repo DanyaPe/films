@@ -45,13 +45,8 @@ export function SearchProvider({ children }) {
         <SearchContext.Provider
             value={{
                 title,
-                setTitle,
                 isLoading,
-                setLoading,
-                page,
-                setPage,
                 isEnd,
-                setEnd,
                 handleSearch,
             }}
         >
