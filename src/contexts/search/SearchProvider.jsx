@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { SearchContext } from "./SearchContext.js";
-import { useFilter } from "./FilterContext";
-import { useMovieList } from "./MovieListContext";
-import { useTheme } from "./ThemeContext";
-import { fetchResultList } from "../utils/fetchMovieList.js";
+import { useFilter } from "../filter/FilterContext.js";
+import { useMovieList } from "../movieList/MovieListContext.js";
+import { useTheme } from "../theme/ThemeContext.js";
+import { fetchResultList } from "../../utils/fetchMovieList.js";
 
 export function SearchProvider({ children }) {
     const [title, setTitle] = useState(" ");
