@@ -1,10 +1,9 @@
-import { createContext, useContext, useState } from "react";
+import { useState } from "react";
+import { SearchContext } from "./SearchContext.js";
 import { useFilter } from "./FilterContext";
 import { useMovieList } from "./MovieListContext";
 import { useTheme } from "./ThemeContext";
 import { fetchResultList } from "../utils/fetchMovieList.js";
-
-const SearchContext = createContext(undefined);
 
 export function SearchProvider({ children }) {
     const [title, setTitle] = useState(" ");
@@ -59,16 +58,4 @@ export function SearchProvider({ children }) {
             {children}
         </SearchContext.Provider>
     );
-}
-
-export function useSearch() {
-    const context = useContext(SearchContext);
-
-    if (context === undefined) {
-        throw new Error(
-            "useSearch необходимо использовать внутри SearchProvider"
-        );
-    }
-
-    return context;
 }
