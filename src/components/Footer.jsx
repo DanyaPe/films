@@ -1,8 +1,9 @@
 import "../index.css";
+import { useLanguage } from "../contexts/language/LanguageContext.js";
 import text from "../internationalization/translations.js";
 
-export default function Footer(props) {
-    const { language } = props;
+export default function Footer() {
+    const { language } = useLanguage();
 
     return (
         <footer className="border-t bg-green-200 border-black dark:border-gray-200 dark:bg-gray-950 h-14 md:h-16 lg:h-20">
