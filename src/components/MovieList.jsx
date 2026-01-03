@@ -12,11 +12,8 @@ export default function MovieList(props) {
                 {movieList.map((movieElement) => {
                     if (filter === "all" || filter === movieElement.Type)
                         return (
-                            <li>
-                                <Movie
-                                    key={movieElement.imdbID}
-                                    {...movieElement}
-                                />
+                            <li key={movieElement.imdbID}>
+                                <Movie {...movieElement} />
                             </li>
                         );
                 })}
