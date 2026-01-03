@@ -1,8 +1,13 @@
 import "../index.css";
+import { useLanguage } from "../contexts/language/LanguageContext.js";
 import text from "../internationalization/translations.js";
 
-export default function LanguageButton(props) {
-    const { handleLanguage, language } = props;
+export default function LanguageButton() {
+    const { language, setLanguage } = useLanguage();
+
+    const handleLanguage = () => {
+        language === "ru" ? setLanguage("eng") : setLanguage("ru");
+    };
 
     return (
         <button

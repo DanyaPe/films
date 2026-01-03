@@ -1,8 +1,9 @@
 import "../index.css";
+import { useLanguage } from "../contexts/language/LanguageContext.js";
 import text from "../internationalization/translations.js";
 
-export default function Preloader(props) {
-    const { language } = props;
+export default function Preloader() {
+    const { language } = useLanguage();
 
     return (
         <div className="inline-flex items-center rounded-md px-4 py-2 font-spotify dark:text-amber-50 text-black transition duration-150 ease-in-out m-10 text-sm lg:text-base xl:text-xl">

@@ -2,7 +2,7 @@ import "../index.css";
 import React from "react";
 import Poster from "./Poster";
 
-export default React.memo(function Movie(props) {
+export default React.memo(function MovieCard(props) {
     const { Title, Year, Poster: url } = props;
 
     return (
