@@ -1,4 +1,4 @@
-import Movie from "./Movie.jsx";
+import MovieCard from "./MovieCard.jsx";
 import Preloader from "./Preloader";
 import text from "../internationalization/translations.js";
 
@@ -13,7 +13,7 @@ export default function MovieList(props) {
                     if (filter === "all" || filter === movieElement.Type)
                         return (
                             <li key={movieElement.imdbID}>
-                                <Movie {...movieElement} />
+                                <MovieCard {...movieElement} />
                             </li>
                         );
                 })}
