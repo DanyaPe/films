@@ -4,6 +4,7 @@ import { useFilter } from "../filter/FilterContext.js";
 import { useMovieList } from "../movieList/MovieListContext.js";
 import { useTheme } from "../theme/ThemeContext.js";
 import { fetchResultList } from "../../utils/fetchMovieList.js";
+import sleep from "../../utils/sleep.js";
 
 export function SearchProvider({ children }) {
     const [title, setTitle] = useState(" ");
@@ -15,8 +16,9 @@ export function SearchProvider({ children }) {
     const { setFirstRender } = useTheme();
 
     const handleSearch = async (currentText) => {
-        setLoading(true);
         setFirstRender(false);
+        await sleep(1000);
+        setLoading(true);
 
         const isAnotherTitle = title !== currentText;
         if (isAnotherTitle) setTitle(currentText);

@@ -8,7 +8,7 @@ export default function Filter() {
     const { language } = useLanguage();
 
     return (
-        <fieldset className="flex flex-row justify-between gap-x-5">
+        <fieldset className="flex flex-row justify-center gap-x-5 mb-10">
             <legend className="sr-only">
                 {text(language, "label_for_filter")}
             </legend>
