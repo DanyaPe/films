@@ -10,6 +10,7 @@ export function SearchProvider({ children }) {
     const { filter } = useFilter();
     const { setMovieList } = useMovieList();
     const { setFirstRender } = useTheme();
+    const delay = 1000;
 
     const reducer = (state, action) => {
         switch (action.type) {
@@ -47,7 +48,6 @@ export function SearchProvider({ children }) {
 
     const handleSearch = async (currentText) => {
         setFirstRender(false);
-        await sleep(1000);
 
         const isAnotherTitle = state.title !== currentText;
         let currentPage = state.page;
@@ -58,7 +58,8 @@ export function SearchProvider({ children }) {
                 type: "Search_start",
                 payload: { title: currentText },
             });
-            currentPage = 0;
+            currentPage = 1;
+            await sleep(delay);
         } else {
             dispatch({
                 type: "Search_continue",
@@ -66,7 +67,11 @@ export function SearchProvider({ children }) {
             currentPage++;
         }
 
-        const result = await fetchResultList(currentText, currentPage, filter);
+        const result = await fetchResultList(
+            currentText,
+            String(currentPage),
+            filter
+        );
 
         setMovieList((prev) =>
             prev.concat(
@@ -94,6 +99,7 @@ export function SearchProvider({ children }) {
                 isLoading: state.isLoading,
                 isEnd: state.isEnd,
                 handleSearch,
+                delay,
             }}
         >
             {children}
