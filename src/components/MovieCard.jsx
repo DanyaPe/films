@@ -11,7 +11,7 @@ export default React.memo(function MovieCard(props) {
 
     return (
         <article
-            className={`flex flex-col w-36 h-61 md:w-54 md:h-92 lg:w-58 lg:h-104 xl:w-72 xl:h-122 ${
+            className={`flex flex-col w-36 h-61 md:w-54 md:h-92 lg:w-58 lg:h-104 xl:w-72 xl:h-122 text-black dark:text-amber-50 border-fills ${
                 isVisible ? "scale-up-tl" : ""
             }`}
         >

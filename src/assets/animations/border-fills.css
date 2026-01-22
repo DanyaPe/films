@@ -1,0 +1,41 @@
+.border-fills {
+    position: relative;
+    cursor: pointer;
+    border: 1px none currentColor;
+}
+
+.border-fills::before,
+.border-fills::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    width: 0;
+    height: 0;
+    transition:
+        width 0.3s ease,
+        height 0.3s ease;
+}
+
+.border-fills::before {
+    top: 0;
+    left: 0;
+}
+
+.border-fills::after {
+    bottom: 0;
+    right: 0;
+}
+
+.border-fills:hover::before {
+    width: 100%;
+    height: 100%;
+    border-top: 1px solid currentColor;
+    border-left: 1px solid currentColor;
+}
+
+.border-fills:hover::after {
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid currentColor;
+    border-right: 1px solid currentColor;
+}
