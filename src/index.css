@@ -4,6 +4,8 @@
 @import "./assets/animations/scale-up-tl.css";
 @import "./assets/animations/slide-left.css";
 @import "./assets/animations/slide-right.css";
+@import "./assets/animations/border-fills.css";
+@import "./assets/animations/centering.css";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -56,4 +58,9 @@
     -webkit-animation: slide-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
         both;
     animation: slide-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.centering {
+    -webkit-animation: centering 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation: centering 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }

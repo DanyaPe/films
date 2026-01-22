@@ -3,7 +3,7 @@ import { SearchContext } from "./SearchContext.js";
 import { useFilter } from "../filter/FilterContext.js";
 import { useMovieList } from "../movieList/MovieListContext.js";
 import { useTheme } from "../theme/ThemeContext.js";
-import { fetchResultList } from "../../utils/fetchMovieList.js";
+import { fetchResultList } from "../../utils/API.js";
 import sleep from "../../utils/sleep.js";
 
 export function SearchProvider({ children }) {
@@ -70,17 +70,17 @@ export function SearchProvider({ children }) {
         const result = await fetchResultList(
             currentText,
             String(currentPage),
-            filter
+            filter,
         );
 
         setMovieList((prev) =>
             prev.concat(
                 Array.from(
                     new Map(
-                        result.map((movie) => [movie.imdbID, movie])
-                    ).values()
-                )
-            )
+                        result.map((movie) => [movie.imdbID, movie]),
+                    ).values(),
+                ),
+            ),
         );
         dispatch({
             type: "Search_end",
