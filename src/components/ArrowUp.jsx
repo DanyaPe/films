@@ -7,7 +7,7 @@ export default function ArrowUp() {
     useEffect(() => {
         const handleScroll = () => {
             setVisible(
-                window.pageYOffset > (window.innerWidth >= 1440 ? 3000 : 900)
+                window.pageYOffset > (window.innerWidth >= 1440 ? 3000 : 900),
             );
         };
 
@@ -34,20 +34,20 @@ export default function ArrowUp() {
                 <path
                     d="M12 5V19"
                     stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                 ></path>
                 <path
                     d="M18 11L12 5"
                     stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                 ></path>
                 <path
                     d="M6 11L12 5"
                     stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                 ></path>
             </svg>
         </button>
