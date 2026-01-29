@@ -1,0 +1,20 @@
+.side-text-block {
+    --scaleX: 0;
+
+    top: var(--bt);
+    left: var(--bl);
+    height: var(--bh);
+    width: var(--bw);
+    position: absolute;
+    z-index: 99;
+
+    transform-origin: 0% 0%;
+    transform: scaleX(var(--scaleX));
+
+    transition: transform var(--animation-duration)
+        cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.side-text-block.show {
+    --scaleX: 1;
+}

@@ -1,11 +1,14 @@
 @import "tailwindcss";
+
 @import "./assets/animations/fade-in.css";
 @import "./assets/animations/fade-out.css";
-@import "./assets/animations/scale-up-tl.css";
 @import "./assets/animations/slide-left.css";
 @import "./assets/animations/slide-right.css";
 @import "./assets/animations/border-fills.css";
-@import "./assets/animations/centering.css";
+
+@import "./assets/behaviour/backprod.css";
+@import "./assets/behaviour/side-text-block.css";
+@import "./assets/behaviour/movie-card.css";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -28,11 +31,6 @@
 @theme {
     --font-palui: "Palui", sans-serif;
     --font-spotify: "Spotify", sans-serif;
-}
-
-.scale-up-tl {
-    -webkit-animation: scale-up-tl 0.5s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-    animation: scale-up-tl 0.5s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
 .fade-in {
@@ -58,9 +56,4 @@
     -webkit-animation: slide-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
         both;
     animation: slide-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-}
-
-.centering {
-    -webkit-animation: centering 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-    animation: centering 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
