@@ -94,7 +94,7 @@ const fetchPlot = async (id) => {
     }
 
     const API_KEY = import.meta.env.VITE_API_KEY;
-    const endPoint = `http://www.omdbapi.com/?apikey=${API_KEY}&i=${id}&plot=full`;
+    const endPoint = `https://www.omdbapi.com/?apikey=${API_KEY}&i=${id}&plot=full`;
 
     try {
         const response = await fetch(endPoint);
