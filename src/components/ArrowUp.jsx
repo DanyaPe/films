@@ -1,8 +1,10 @@
 import "../index.css";
 import { useState, useEffect } from "react";
+import { useTheme } from "../contexts/theme/ThemeContext";
 
 export default function ArrowUp() {
     const [visible, setVisible] = useState(false);
+    const { isScrollLock } = useTheme();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -18,8 +20,8 @@ export default function ArrowUp() {
 
     return (
         <button
-            className={`size-10 md:size-13 xl:size-15 flex items-center justify-center fixed transform -right-15 bottom-15 md:bottom-17 xl:bottom-21 border-2 rounded-2xl bg-gray-800 dark:bg-white ease-in-out duration-300 transition-all ${
-                visible ? "slide-left" : "slide-right"
+            className={`size-10 md:size-13 xl:size-15 flex items-center justify-center fixed transform -right-15 bottom-15 md:bottom-17 xl:bottom-21 border-2 rounded-2xl bg-gray-800 dark:bg-white z-10 ease-in-out duration-300 transition-all ${
+                visible && !isScrollLock ? "slide-left" : "slide-right"
             }`}
             onClick={() => {
                 window.scrollTo({ top: 0, behavior: "smooth" });

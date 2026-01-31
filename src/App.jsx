@@ -9,7 +9,7 @@ export default function App() {
     return (
         <ThemeProvider>
             <LanguageProvider>
-                <div className="min-h-screen flex flex-col">
+                <div className="min-h-screen flex flex-col overflow-hidden">
                     <Header />
                     <Main />
                     <Footer />

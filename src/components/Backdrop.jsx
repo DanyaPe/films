@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useTheme } from "../contexts/theme/ThemeContext";
 
 export default function Backdrop(props) {
     const {
@@ -12,6 +13,8 @@ export default function Backdrop(props) {
         centerTranslate,
     } = props;
 
+    const { setScrollLock } = useTheme();
+
     useEffect(() => {
         if (!backDropRef) return;
 
@@ -21,7 +24,10 @@ export default function Backdrop(props) {
         );
 
         backDropRef.current.classList.add("show");
-    }, [animationDuration, backDropRef]);
+        setScrollLock(true);
+
+        return () => setScrollLock(false);
+    }, [animationDuration, backDropRef, setScrollLock]);
 
     const close = () => {
         if (!cardRef.current) return;
