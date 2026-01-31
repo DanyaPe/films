@@ -31,11 +31,11 @@ export default React.memo(function MovieCard(props) {
 
             node.style.setProperty(
                 "--center-translate-y",
-                `${window.innerHeight / 2 - (rect.y + rect.height / 2)}px`,
+                `${window.innerWidth > 425 ? window.innerHeight / 2 - (rect.y + rect.height / 2) : window.innerHeight / 4 - (rect.y + rect.height / 2)}px`,
             );
             node.style.setProperty(
                 "--center-translate-x",
-                `${window.innerWidth / 2 - (rect.x + rect.width * 1.28)}px`,
+                `${window.innerWidth > 425 ? window.innerWidth / 2 - (rect.x + rect.width * 1.28) : window.innerWidth / 2 - (rect.x + rect.width / 2)}px`,
             );
             node.classList.add("centering", "bg-lime-50", "dark:bg-gray-800");
         } else {
