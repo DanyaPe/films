@@ -1,42 +1,51 @@
 # 🎬 Movie Search
 
-SPA-приложение для поиска фильмов по названию с использованием OMDb API.  
-Проект реализован на React + Vite и предназначен для демонстрации навыков frontend-разработки.
+A single-page application for searching movies by title using the OMDb API.
+Built with React and Vite, this project is intended to demonstrate frontend development skills.
 
-## 🔗 Демо
+## 🔗 Demo
 
 https://danyape.github.io/films/
 
-## 🛠 Стек технологий
+## 🛠 Tech stack
 
 -   [React](https://react.dev/)(19.2.0)
 -   [Vite](https://vite-docs-ru.vercel.app/) (7.2.4)
 -   [TailWind CSS](https://tailwindcss.com/) (4.1.18)
 -   JavaScript (ES6+)
--   OMDb API
+-   [OMDb API](https://www.omdbapi.com/)
 
-## ⚙️ Функциональность
+## ⚙️ Features
 
--   Поиск фильмов по названию (сервис OMDb поддерживает поиск только на английском языке)
--   Отображение списка результатов
--   Фильтрация по типу контента (фильмы или сериалы)
--   Обработка состояний загрузки и ошибок
--   Адаптивный интерфейс
--   Темная тема
--   Перевод страницы на два языка (английский и русский)
+-    Search for movies by title (the OMDb service supports search in English only)
+-    Display of search results
+-    Filtering by content type (movies or TV series)
+-    Viewing detailed movie information when opening a movie card
+-    Handling of loading and error states
+-    Responsive user interface
+-    Dark theme support
+-    Page localization in two languages (English and Russian; movie data content is not translated)
 
-## 📂 Структура проекта
+## 📂 Project structure
 ```
 src/
-├─ assets/					# Дополнительные ресурсы для стилизации
-├─ components/ 				# UI-компоненты (кнопки, карточки фильмов)
-├─ constants/				# Глобальные константы
-├─ contexts/				# Сущности контекстов
-├─ internationalization/ 	# Словарь переводов и функция для динамического отображения текста
-├─ utils/ 					# Вспомогательные функции для работы с OMDb API
+├─ assets/                     # Additional styling resources
+│  ├─ animations/                # Simple animation definitions
+│  ├─ behaviour/                 # Behavioral styles for components
+│  └─ fonts/                     # Fonts
+├─ components/                 # UI components (buttons, movie cards)
+├─ constants/                  # Global constants
+├─ contexts/                   # Context entities
+│  ├─ filter/                    # Filter context
+│  ├─ language/                  # Language (localization) context
+│  ├─ movieList/                 # Movie list context
+│  ├─ search/                    # Search execution context
+│  └─ theme/                     # Theme context
+├─ internationalization/       # Translation dictionary and helper functions
+├─ utils/                      # Utility functions for working with the OMDb API
 └─ App.jsx
 ```
-## 🚀 Установка и запуск
+## 🚀 Installation and run
 
 ```bash
 git clone https://github.com/DanyaPe/films.git
