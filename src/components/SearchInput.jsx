@@ -12,7 +12,7 @@ export default function SearchInput() {
     return (
         <form
             onSubmit={(event) => event.preventDefault()}
-            className="relative p-2 flex items-center gap-x-2 w-[90vw] md:w-[50vw] mt-2 md:mt-5"
+            className="relative p-2 flex items-center gap-x-2 md:w-[50vw] md:mt-5 w-[100vw] mt-2"
         >
             <img
                 src="./loupe.svg"
@@ -33,7 +33,7 @@ export default function SearchInput() {
                     if (event.key === "Enter") handleSearch(currentText);
                 }}
             />
-            <span class="pointer-events-none absolute top-1/2 -translate-y-1/2 dark:text-gray-400 text-cyan-900 transition-all duration-300 peer-focus:top-0 peer-not-placeholder-shown:top-0 text-[8px] left-9 md:text-xs md:left-10 lg:text-sm xl:left-12 xl:text-base">
+            <span className="pointer-events-none absolute top-1/2 -translate-y-1/2 dark:text-gray-400 text-cyan-900 transition-all duration-300 peer-focus:top-0 peer-not-placeholder-shown:top-0 text-[10px] left-9 md:text-xs md:left-10 lg:text-sm xl:left-12 xl:text-base">
                 {text(language, "tip_for_search")}
             </span>
         </form>

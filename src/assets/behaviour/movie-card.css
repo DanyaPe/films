@@ -1,0 +1,33 @@
+:root {
+    --up-scale: 1.8;
+}
+
+@media (max-width: 1440px) {
+    :root {
+        --up-scale: 1.5;
+    }
+}
+
+.movie-card {
+    --tx: 0px;
+    --ty: 0px;
+    --card-scale: 0.2;
+    z-index: auto;
+
+    transform-origin: center center;
+    transform: translate(var(--tx), var(--ty)) scale(var(--card-scale));
+
+    transition: transform var(--animation-duration)
+        cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.movie-card.visible {
+    --card-scale: 1;
+}
+
+.movie-card.centering {
+    --tx: var(--center-translate-x);
+    --ty: var(--center-translate-y);
+    --card-scale: var(--up-scale);
+    z-index: 99;
+}
