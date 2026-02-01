@@ -9,6 +9,7 @@
 @import "./assets/behaviour/backdrop.css";
 @import "./assets/behaviour/side-text-block.css";
 @import "./assets/behaviour/movie-card.css";
+@import "./assets/behaviour/home-pic.css";
 
 @custom-variant dark (&:where(.dark, .dark *));
 

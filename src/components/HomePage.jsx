@@ -7,11 +7,21 @@ export default function HomePage() {
     const { delay } = useSearch();
 
     return (
-        <img
-            src="./home_page_pic.jpg"
-            alt="Home Page Picture"
-            style={{ "--delay-before-search": `${delay}ms` }}
-            className={`${isFirstRender ? "fade-in" : "fade-out"}`}
-        />
+        <div className="w-screen overflow-hidden">
+            <div className="home-pic">
+                <img
+                    src="./home_page_pic.jpg"
+                    alt="Home Page Picture"
+                    style={{ "--delay-before-search": `${delay}ms` }}
+                    className={`w-auto h-187.5 sm:h-auto sm:w-screen shrink-0 ${isFirstRender ? "fade-in" : "fade-out"}`}
+                />
+                <img
+                    src="./home_page_pic.jpg"
+                    alt="Home Page Picture"
+                    style={{ "--delay-before-search": `${delay}ms` }}
+                    className={`w-auto h-187.5 sm:h-auto sm:w-screen shrink-0 ${isFirstRender ? "fade-in" : "fade-out"}`}
+                />
+            </div>
+        </div>
     );
 }

@@ -1,0 +1,26 @@
+@keyframes home-pic-animation {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+:root {
+    --home-pic-width: max-content;
+}
+
+@media (max-width: 425px) {
+    :root {
+        --home-pic-width:   
+    ;
+    }
+}
+
+.home-pic {
+    display: flex;
+    width: max-content;
+    -webkit-animation: marquee 20s linear infinite;
+    animation: home-pic-animation 20s linear infinite;
+}
